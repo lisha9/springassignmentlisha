@@ -1,0 +1,33 @@
+For userdetails:
+create table `bookdb`.`userdetails`( 
+   `username` varchar(40) NOT NULL , 
+   `password` varchar(20) NOT NULL , 
+   `firstname` varchar(20) NOT NULL , 
+   `lastname` varchar(20) NOT NULL , 
+   `contact` varchar(12) , 
+   `type` varchar(10) DEFAULT 'user' , 
+   PRIMARY KEY (`username`)
+ )
+
+For bookdetails:
+create table `bookdb`.`bookdetails`( 
+   `isbn` varchar(10) NOT NULL , 
+   `bookname` varchar(40) NOT NULL , 
+   `author` varchar(30) NOT NULL , 
+   `description` varchar(150) , 
+   `image` varchar(500) , 
+   PRIMARY KEY (`isbn`)
+ )
+
+For reviewdetails:
+create table `bookdb`.`reviewdetails`( 
+   `username` varchar(40) NOT NULL , 
+   `isbn` varchar(10) NOT NULL , 
+   `comment` varchar(50) , 
+   `date` date NOT NULL , 
+   `rating` int(1) DEFAULT '0' , 
+   PRIMARY KEY (`username`, `isbn`)
+ )
+
+
+
